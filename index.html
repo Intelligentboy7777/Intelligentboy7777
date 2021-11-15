@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>randomBG</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+            flex-direction: column;
+        }
+        .btn{
+            width: 300px;
+            height: 60px;
+            background-color: bisque;
+            font-family: Verdana;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        h2{
+            width: 300px;
+            height: 50px;
+            background-color: cadetblue;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <h2>Color: <span class="color">#fff</span></h2>
+        <button onclick="changeBg(event)" class="Button btn">ChangeColor</button> -->
+        <button class="btn" id="decrement" onclick="myFunc(event)">+</button>
+        <h2 id="son" class="number">1</h2>
+        <button class="btn" id="increment" onclick="myFunc(event)">-</button>
+
+        
+    </div>
+    <script>
+        // let  colors=['red','blue','#123456','rgb(25,87,62)','rgba(8,23,64,0.3)'];
+        // let color=document.querySelector('.color');
+
+        // function changeBg(){
+        //     let randomIndex=randomNumber();
+        //     document.body.style.backgroundColor=colors[randomIndex]
+        //     color.textContent=colors[randomIndex];
+        // }
+        
+        // function randomNumber(){
+        //     return Math.floor(Math.random()*(colors.length-1));
+        // }
+
+        
+        let number=document.querySelector('.number')
+        let size=0;
+        function myFunc(e){
+        if (e.target.id==='decrement') {
+                size+=1;
+                console.log(size);
+                
+            }
+            else{
+                size-=1
+                console.log(size);
+            }
+            number.textContent=size;
+            if (size>0) {
+                document.body.style.backgroundColor='green';
+            } else {
+                document.body.style.backgroundColor='red';
+            }
+        }
+    
+
+        
+    </script>
+</body>
+</html>
+
